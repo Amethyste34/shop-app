@@ -2,8 +2,10 @@ import { Link } from 'expo-router';
 import { View, Image, Text, StyleSheet, Pressable, TouchableOpacity, FlatList } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { CATEGORIES } from '../../assets/categories';
+import { useCartStore } from '../store/cart-store';
 
 export const ListHeader = () => {
+  const {getItemCount} = useCartStore();
   return (
     <View>
       <View style={[styles.headerContainer]}>
@@ -11,7 +13,7 @@ export const ListHeader = () => {
           <View style={styles.headerLeft}>
             <View style={styles.avatarContainer}>
               <Image
-                source={require('../../assets/images/hero.png')}
+                source={require('../../assets/images/avatar_fille.jpg')}
                 style={styles.avatarImage}
               />
               <Text style={styles.avatarText}>Hello Laurence</Text>
@@ -30,7 +32,7 @@ export const ListHeader = () => {
                     />
 
                     <View style={styles.badgeContainer}>
-                      <Text style={styles.badgeText}>{1}</Text>
+                      <Text style={styles.badgeText}>{getItemCount()}</Text>
                     </View>
                   </View>
                 )}

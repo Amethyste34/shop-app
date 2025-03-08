@@ -7,4 +7,4 @@ import App from './App';
 // the environment is set up appropriately
 registerRootComponent(App);
 
-//lecture vidéo: 54:37
+//lecture vidéo: 1:05:15
